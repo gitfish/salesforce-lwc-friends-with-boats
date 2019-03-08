@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/boatsearchformlwc": [
+                "boatsearchformlwc/boatsearchformlwc.js"
+            ],
+            "c/boatsearchlwc": [
+                "boatsearchlwc/boatsearchlwc.js"
+            ],
+            "c/leaflet": [
+                "../staticresources/leaflet/leaflet.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ]
+}

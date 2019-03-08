@@ -1,0 +1,46 @@
+<aura:component access="global" controller="BoatReviews">
+    <aura:attribute name="boat" type="Boat__c" />
+    <aura:attribute name="boatReviews" type="BoatReview__c[]" default="[]" access="private" />
+    <aura:attribute name="boatReviewsEmpty" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.boat}" action="{!c.doInit}"/>
+    <aura:method name="refresh" action="{!c.doInit}" />
+    
+    <ui:scrollerWrapper class="scrollersize">
+    	<aura:if isTrue="{!v.boatReviews.length == 0}">
+            <div class="slds-align_absolute-center">No Reviews Available</div>
+        </aura:if>
+        <aura:if isTrue="{!v.boatReviews.length > 0}">
+            <div class="sdls-feed">
+                <ul class="sdls-feed__list">
+                	<aura:iteration items="{!v.boatReviews}" var="boatReview">
+                    	<article class="slds-post">
+                        	<header class="slds-post__header slds-media">
+                              <div class="slds-media__figure">
+                                <a href="javascript:void(0);" class="slds-avatar slds-avatar_circle slds-avatar_large">
+                                  <img alt="{!boatReview.CreatedBy.Name}" src="{!boatReview.CreatedBy.SmallPhotoUrl}" title="{!boatReview.CreatedBy.Name}" />
+                                </a>
+                              </div>
+                              <div class="slds-media__body">
+                                <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                    <p><a href="{!'/' + boatReview.CreatedBy.Id}" data-userid="{!boatReview.CreatedBy.Id}" title="{!boatReview.CreatedBy.Name}" onclick="{!c.onUserInfoClick}">{!boatReview.CreatedBy.Name}</a> — {!boatReview.CreatedBy.CompanyName}</p>
+                                </div>
+                                <p class="slds-text-body_small">
+                                    <lightning:formattedDateTime value="{!boatReview.CreatedDate}" year="numeric" day="2-digit" month="short" hour="2-digit" minute="2-digit" second="2-digit" />  
+                                </p>
+                              </div>
+                            </header>
+                            <div class="slds-post__content slds-text-longform">
+                              <h3 class="slds-text-heading_small">{!boatReview.Name}</h3>
+                                <p><lightning:formattedRichText value="{!boatReview.Comment__c}" /></p>
+                            </div>
+                            <c:FiveStarRating value="{!boatReview.Rating__c}" readonly="true" />
+                        </article>
+                	</aura:iteration>
+                </ul>
+                
+            </div>
+        </aura:if>
+    </ui:scrollerWrapper>
+    
+</aura:component>

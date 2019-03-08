@@ -1,0 +1,25 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="BoatSearchResults">
+    <aura:attribute name="boats" type="List" default="[]" />
+    <aura:attribute name="boatsEmpty" type="Boolean" default="false" />
+    <aura:attribute name="selectedBoatId" type="String" />
+    <aura:method name="search" action="{!c.doSearch}">
+        <aura:attribute name="boatTypeId" type="String" />
+    </aura:method>
+    <aura:handler name="boatselect" event="c:BoatSelect" action="{!c.onBoatSelect}" />
+    
+    <aura:if isTrue="{!v.boatsEmpty}">
+    	<div class="slds-align_absolute-center">
+        	No boats found
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!not(v.boatsEmpty)}">
+        <lightning:layout multipleRows="true" horizontalAlign="center">
+            <aura:iteration items="{!v.boats}" var="boat">
+                <lightning:layoutitem padding="around-small" size="3">
+                    <c:BoatTile boat="{!boat}" selected="{!boat.Id == v.selectedBoatId ? true : false}" />
+                </lightning:layoutitem>
+            </aura:iteration>
+        </lightning:layout>
+    </aura:if>
+</aura:component>

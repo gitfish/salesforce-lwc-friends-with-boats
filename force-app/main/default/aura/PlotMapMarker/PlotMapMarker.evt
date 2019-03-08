@@ -1,0 +1,6 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="sObjectId" type="String" />
+    <aura:attribute name="lat" type="Decimal" />
+    <aura:attribute name="long" type="Decimal" />
+    <aura:attribute name="label" type="String" />
+</aura:event>

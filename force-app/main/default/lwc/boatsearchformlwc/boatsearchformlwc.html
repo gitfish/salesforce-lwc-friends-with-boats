@@ -1,0 +1,15 @@
+<template>
+    <lightning-layout horizontal-align="center" vertical-align="end">
+        <lightning-layout-item padding="horizontal-small">
+            <lightning-combobox value={selectedBoatType} options={boatTypeOptions} onchange={onBoatTypeChange} disabled={boatTypeOptionsDisabled}></lightning-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item padding="horizontal-small">
+            <lightning-button label="Search" variant="brand" onclick={onFormSubmit}></lightning-button>
+        </lightning-layout-item>
+        <template if:true={newAvailable}>
+            <lightning-layout-item>
+                <lightning-button label="New" onclick={onNewBoat}></lightning-button>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>
