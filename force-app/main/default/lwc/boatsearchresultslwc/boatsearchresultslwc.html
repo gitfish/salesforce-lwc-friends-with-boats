@@ -1,0 +1,16 @@
+<template>
+    <template if:true={boatsEmpty}>
+        <div class="slds-align_absolute-center">
+            No boats found
+        </div>
+    </template>
+    <template if:false={boatsEmpty}>
+        <lightning-layout multiple-rows>
+            <template for:each={boats} for:item="boat">
+                <lightning-layout-item key={boat.Id} padding="around-small" size="3">
+                    <div>TODO: {boat.Id}</div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </template>
+</template>

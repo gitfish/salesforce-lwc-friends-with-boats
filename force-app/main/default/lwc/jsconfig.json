@@ -9,6 +9,12 @@
             "c/boatsearchlwc": [
                 "boatsearchlwc/boatsearchlwc.js"
             ],
+            "c/boatsearchresultslwc": [
+                "boatsearchresultslwc/boatsearchresultslwc.js"
+            ],
+            "c/boattilelwc": [
+                "boattilelwc/boattilelwc.js"
+            ],
             "c/leaflet": [
                 "../staticresources/leaflet/leaflet.js"
             ]
