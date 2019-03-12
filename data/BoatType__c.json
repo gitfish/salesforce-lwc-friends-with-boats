@@ -1,0 +1,60 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "BoatType__c",
+                "referenceId": "BoatType__cRef1"
+            },
+            "Name": "Sailboat"
+        },
+        {
+            "attributes": {
+                "type": "BoatType__c",
+                "referenceId": "BoatType__cRef2"
+            },
+            "Name": "Fishing Boat"
+        },
+        {
+            "attributes": {
+                "type": "BoatType__c",
+                "referenceId": "BoatType__cRef3"
+            },
+            "Name": "Jet Ski"
+        },
+        {
+            "attributes": {
+                "type": "BoatType__c",
+                "referenceId": "BoatType__cRef4"
+            },
+            "Name": "High Performance"
+        },
+        {
+            "attributes": {
+                "type": "BoatType__c",
+                "referenceId": "BoatType__cRef5"
+            },
+            "Name": "Pleasure Boat"
+        },
+        {
+            "attributes": {
+                "type": "BoatType__c",
+                "referenceId": "BoatType__cRef6"
+            },
+            "Name": "Ski Boat"
+        },
+        {
+            "attributes": {
+                "type": "BoatType__c",
+                "referenceId": "BoatType__cRef7"
+            },
+            "Name": "Yacht"
+        },
+        {
+            "attributes": {
+                "type": "BoatType__c",
+                "referenceId": "BoatType__cRef8"
+            },
+            "Name": "House Boat"
+        }
+    ]
+}

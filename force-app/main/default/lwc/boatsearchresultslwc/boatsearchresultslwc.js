@@ -8,6 +8,9 @@ export default class Boatsearchresultslwc extends LightningElement {
     @track
     boatsError;
 
+    @track
+    selectedboatId;
+
     get boatsEmpty() {
         return !this.boats || this.boats.length === 0;
     }

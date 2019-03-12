@@ -1,0 +1,29 @@
+.tile {
+    position:relative;
+    display: inline-block;
+    min-width: 220px;
+    min-height: 220px;
+    padding: 1px !important;
+}
+.tile.selected {
+    border: 3px solid rgb(0, 112, 210);
+}
+.innertile {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.lower-third {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, .4);
+    padding: 6px 8px;
+}
