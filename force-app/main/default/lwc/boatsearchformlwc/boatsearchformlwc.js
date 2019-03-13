@@ -59,7 +59,6 @@ export default class Boatsearchformlwc extends NavigationMixin(LightningElement)
     }
 
     onNewBoat() {
-        console.log("-- Create New Boat");
         this[NavigationMixin.Navigate]({
             type: 'standard__objectPage',
             attributes: {
@@ -71,12 +70,11 @@ export default class Boatsearchformlwc extends NavigationMixin(LightningElement)
     }
 
     onFormSubmit() {
-        console.log(`-- Page Ref: ` + this.pageRef);
         this.dispatchEvent(new CustomEvent("formsubmit", {
             detail: {
                 boatTypeId: this.selectedBoatType
             }
-        }))
+        }));
     }
     
 }

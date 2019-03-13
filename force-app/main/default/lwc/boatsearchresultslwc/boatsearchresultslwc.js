@@ -1,5 +1,7 @@
-import { LightningElement, track, api } from 'lwc';
+import { LightningElement, track, api, wire } from 'lwc';
 import getBoats from "@salesforce/apex/BoatSearchResults.getBoats";
+import { fireEvent } from "c/pubsub";
+import { CurrentPageReference } from 'lightning/navigation';
 
 export default class Boatsearchresultslwc extends LightningElement {
     @track
@@ -9,7 +11,10 @@ export default class Boatsearchresultslwc extends LightningElement {
     boatsError;
 
     @track
-    selectedboatId;
+    selectedBoatId;
+
+    @wire(CurrentPageReference)
+    pageRef;
 
     get boatsEmpty() {
         return !this.boats || this.boats.length === 0;
@@ -22,5 +27,10 @@ export default class Boatsearchresultslwc extends LightningElement {
         } catch(error) {
             this.boatsError = error;
         }
+    }
+
+    onBoatSelect(event) {
+        this.selectedBoatId = event.detail.boatId;
+        fireEvent(this.pageRef, "boatselected", event.detail);
     }
 }

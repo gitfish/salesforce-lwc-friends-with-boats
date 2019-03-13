@@ -8,7 +8,7 @@
         <lightning-layout multiple-rows>
             <template for:each={boats} for:item="boat">
                 <lightning-layout-item key={boat.Id} padding="around-small" size="3">
-                    <c-boattilelwc boat={boat}></c-boattilelwc>
+                    <c-boattilelwc boat={boat} selected-id={selectedBoatId} onselect={onBoatSelect}></c-boattilelwc>
                 </lightning-layout-item>
             </template>
         </lightning-layout>

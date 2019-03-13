@@ -6,23 +6,23 @@ export default class Boattilelwc extends LightningElement {
     boat;
 
     @api
-    selectedBoatId;
+    selectedId;
 
-    @api
     get currentClass() {
-        return `tile${this.selected ? " selected" : ""}`;
+        return `tile${this.boat && this.boat.Id === this.selectedId  ? " selected" : ""}`;
     }
 
     get pictureStyle() {
         return `background-image:url(${this.boat.Picture__c})`;
     }
 
-    get selected() {
-        return this.boat && this.boat.Id === this.selectedBoatId;
-    }
-
-    onBoatClick() {
-
+    onClick() {
+        // component event
+        this.dispatchEvent(new CustomEvent("select", {
+            detail: {
+                boatId: this.boat.Id
+            }
+        }));
     }
 
 }

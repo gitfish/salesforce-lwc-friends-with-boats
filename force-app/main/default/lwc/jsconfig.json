@@ -15,6 +15,9 @@
             "c/boattilelwc": [
                 "boattilelwc/boattilelwc.js"
             ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
+            ],
             "c/leaflet": [
                 "../staticresources/leaflet/leaflet.js"
             ]
