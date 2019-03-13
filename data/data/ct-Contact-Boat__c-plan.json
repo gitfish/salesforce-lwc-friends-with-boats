@@ -1,0 +1,18 @@
+[
+    {
+        "sobject": "Contact",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "ct-Contacts.json"
+        ]
+    },
+    {
+        "sobject": "Boat__c",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "ct-Boat__cs.json"
+        ]
+    }
+]

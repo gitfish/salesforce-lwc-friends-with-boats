@@ -7,13 +7,16 @@
 const events = {};
 
 const samePageRef = (pageRef1, pageRef2) => {
-    const obj1 = pageRef1.attributes;
-    const obj2 = pageRef2.attributes;
-    return Object.keys(obj1)
-        .concat(Object.keys(obj2))
-        .every(key => {
-            return obj1[key] === obj2[key];
-        });
+    if(pageRef1 && pageRef2) {
+        const obj1 = pageRef1.attributes;
+        const obj2 = pageRef2.attributes;
+        return Object.keys(obj1)
+            .concat(Object.keys(obj2))
+            .every(key => {
+                return obj1[key] === obj2[key];
+            });
+        }
+    return pageRef1 === pageRef2;
 };
 
 /**
