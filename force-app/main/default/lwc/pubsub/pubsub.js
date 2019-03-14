@@ -6,19 +6,6 @@
 
 const events = {};
 
-const samePageRef = (pageRef1, pageRef2) => {
-    if(pageRef1 && pageRef2) {
-        const obj1 = pageRef1.attributes;
-        const obj2 = pageRef2.attributes;
-        return Object.keys(obj1)
-            .concat(Object.keys(obj2))
-            .every(key => {
-                return obj1[key] === obj2[key];
-            });
-        }
-    return pageRef1 === pageRef2;
-};
-
 /**
  * Registers a callback for an event
  * @param {string} eventName - Name of the event to listen for.
@@ -26,7 +13,6 @@ const samePageRef = (pageRef1, pageRef2) => {
  * @param {object} thisArg - The value to be passed as the this parameter to the callback function is bound.
  */
 const registerListener = (eventName, callback, thisArg) => {
-    // Checking that the listener has a pageRef property. We rely on that property for filtering purpose in fireEvent()
     if (!events[eventName]) {
         events[eventName] = [];
     }
@@ -34,6 +20,7 @@ const registerListener = (eventName, callback, thisArg) => {
         return listener.callback === callback && listener.thisArg === thisArg;
     });
     if (!duplicate) {
+        console.log("-- Register listener for: " + eventName);
         events[eventName].push({ callback, thisArg });
     }
 };
@@ -71,17 +58,16 @@ const unregisterAllListeners = thisArg => {
  * @param {string} eventName - Name of the event to fire.
  * @param {*} payload - Payload of the event to fire.
  */
-const fireEvent = (pageRef, eventName, payload) => {
+const fireEvent = (eventName, payload) => {
+    console.log(`-- Listeners exist for events: ${JSON.stringify(Object.keys(events))} `)
     console.log(`-- Fire Event ${eventName}: ${JSON.stringify(payload)}`);
     if (events[eventName]) {
         const listeners = events[eventName];
         listeners.forEach(listener => {
-            if (samePageRef(pageRef, listener.thisArg.pageRef)) {
-                try {
-                    listener.callback.call(listener.thisArg, payload);
-                } catch (error) {
-                    // fail silently
-                }
+            try {
+                listener.callback.call(listener.thisArg, payload);
+            } catch (error) {
+                // fail silently
             }
         });
     }

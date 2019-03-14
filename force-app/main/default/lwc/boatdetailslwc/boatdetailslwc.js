@@ -1,5 +1,5 @@
 import { LightningElement, api, track } from 'lwc';
-import { registerListener, unregisterListener } from "c/pubsub";
+import { registerListener, unregisterAllListeners } from "c/pubsub";
 import getBoatById from "@salesforce/apex/BoatSearchResults.getBoatById";
 
 export default class Boatdetailslwc extends LightningElement {
@@ -49,7 +49,7 @@ export default class Boatdetailslwc extends LightningElement {
     }
 
     disconnectedCallback() {
-        unregisterListener("friendswithboats__boatselected", this.onBoatSelected, this);
+        unregisterAllListeners(this);
     }
 
 }

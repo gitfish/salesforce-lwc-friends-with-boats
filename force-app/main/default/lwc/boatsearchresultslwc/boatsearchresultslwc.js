@@ -31,6 +31,6 @@ export default class Boatsearchresultslwc extends LightningElement {
 
     onBoatSelect(event) {
         this.selectedBoatId = event.detail.boatId;
-        fireEvent(this.pageRef, "friendswithboats__boatselected", event.detail);
+        fireEvent("friendswithboats__boatselected", { ...event.detail });
     }
 }
