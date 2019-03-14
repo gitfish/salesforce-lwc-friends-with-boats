@@ -3,6 +3,12 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/boatdetaillwc": [
+                "boatdetaillwc/boatdetaillwc.js"
+            ],
+            "c/boatdetailslwc": [
+                "boatdetailslwc/boatdetailslwc.js"
+            ],
             "c/boatsearchformlwc": [
                 "boatsearchformlwc/boatsearchformlwc.js"
             ],

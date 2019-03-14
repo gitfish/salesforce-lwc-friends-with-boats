@@ -59,14 +59,50 @@ export default class Boatsearchformlwc extends NavigationMixin(LightningElement)
     }
 
     onNewBoat() {
-        this[NavigationMixin.Navigate]({
+        // doesn't seem to matter what I try, pre-population is a no go
+        console.log("-- Selected Boat Type: " + this.selectedBoatType);
+        const navSpec = {
             type: 'standard__objectPage',
             attributes: {
                 objectApiName: 'Boat__c', // objectApiName is optional
                 actionName: 'new',
+                BoatType__c : this.selectedBoatType || undefined,
+                fields: {
+                    BoatType__c : this.selectedBoatType || undefined
+                },
+                record: {
+                    BoatType__c : this.selectedBoatType || undefined,
+                    fields: {
+                        BoatType__c : this.selectedBoatType || undefined
+                    }
+                },
+                data: {
+                    BoatType__c : this.selectedBoatType || undefined,
+                    fields: {
+                        BoatType__c : this.selectedBoatType || undefined
+                    }
+                }
+            },
+            BoatType__c : this.selectedBoatType || undefined,
+            fields: {
                 BoatType__c : this.selectedBoatType || undefined
-            }
-        });
+            },
+            record: {
+                BoatType__c : this.selectedBoatType || undefined,
+                fields: {
+                    BoatType__c : this.selectedBoatType || undefined
+                }
+            },
+            data: {
+                BoatType__c : this.selectedBoatType || undefined,
+                fields: {
+                    BoatType__c : this.selectedBoatType || undefined
+                }
+            },
+            
+        };
+        console.log(`-- Navigation Spec: ${JSON.stringify(navSpec)}`);
+        this[NavigationMixin.Navigate](navSpec);
     }
 
     onFormSubmit() {

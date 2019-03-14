@@ -1,0 +1,39 @@
+<template>
+    <lightning-card icon-name="utility:anchor" title={cardTitle}>
+        <template if:true={fullDetailsVisible}>
+            <div slot="actions">
+                <lightning-button label="Full Details" onclick={onFullDetails}></lightning-button>
+            </div>
+        </template>
+        <lightning-layout>
+            <lightning-layout-item size="6">
+                <div class="slds-p-horizontal_small">
+                    <div class="boatproperty">
+                        <span class="label">Boat Name:</span>
+                        <span>{boat.Name}</span>
+                    </div>
+                    <div class="boatproperty">
+                        <span class="label">Type:</span>
+                        <span>{boat.BoatType__r.Name}</span>
+                    </div>
+                    <div class="boatproperty">
+                        <span class="label">Length:</span>
+                        <span>{boat.Length__c} ft</span>
+                    </div>
+                    <div class="boatproperty">
+                        <span class="label">Est. Price:</span>
+                        <span>
+                            <lightning-formatted-number value={boat.Price__c} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                        </span>
+                    </div>
+                    <div class="boatproperty">
+                        <span class="label">Description:</span>
+                        <span>
+                            <lightning-formatted-rich-text value={boat.Description__c}></lightning-formatted-rich-text>
+                        </span>
+                    </div>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

@@ -27,12 +27,6 @@ const samePageRef = (pageRef1, pageRef2) => {
  */
 const registerListener = (eventName, callback, thisArg) => {
     // Checking that the listener has a pageRef property. We rely on that property for filtering purpose in fireEvent()
-    if (!thisArg.pageRef) {
-        throw new Error(
-            'pubsub listeners need a "@wire(CurrentPageReference) pageRef" property'
-        );
-    }
-
     if (!events[eventName]) {
         events[eventName] = [];
     }
@@ -78,6 +72,7 @@ const unregisterAllListeners = thisArg => {
  * @param {*} payload - Payload of the event to fire.
  */
 const fireEvent = (pageRef, eventName, payload) => {
+    console.log(`-- Fire Event ${eventName}: ${JSON.stringify(payload)}`);
     if (events[eventName]) {
         const listeners = events[eventName];
         listeners.forEach(listener => {
