@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-grid slds-grid_vertical">
+        <div class="slds-col slds-p-around_x-small">
+            <lightning-input type="text" name="title" value={review.Name} label="Title"></lightning-input>
+        </div>
+        <div class="slds-col slds-p-around_x-small">
+            <label>Description:</label>
+            <lightning-input-rich-text value={review.Comment__c} label="Comment" placeholder="Comment" disabled-categories="FORMAT FONT"></lightning-input-rich-text>
+        </div>
+        <div class="slds-col slds-p-around_x-small">
+            <label>Rating:</label>
+            <c-fivestarratinglwc value={review.Rating__c} onvaluechange={onRatingChange}></c-fivestarratinglwc>
+        </div>
+        <div class="slds-col slds-p-around_x-small">
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item>
+                    <lightning-button icon-name="utility:save" label="Submit" onclick={onSave}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </div>
+</template>

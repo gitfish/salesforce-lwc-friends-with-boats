@@ -3,6 +3,9 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/addboatreviewlwc": [
+                "addboatreviewlwc/addboatreviewlwc.js"
+            ],
             "c/boatdetaillwc": [
                 "boatdetaillwc/boatdetaillwc.js"
             ],
@@ -20,6 +23,9 @@
             ],
             "c/boattilelwc": [
                 "boattilelwc/boattilelwc.js"
+            ],
+            "c/fivestarratinglwc": [
+                "fivestarratinglwc/fivestarratinglwc.js"
             ],
             "c/pubsub": [
                 "pubsub/pubsub.js"
