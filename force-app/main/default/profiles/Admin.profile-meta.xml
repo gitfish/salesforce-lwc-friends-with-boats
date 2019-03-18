@@ -27,14 +27,14 @@
     </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>BoatReview__c.Comment__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>BoatReview__c.Rating__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -71,6 +71,9 @@
         <field>Boat__c.Year_Built__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <layoutAssignments>
+        <layout>BoatReview__c-BoatReview Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>Boat__c-Boat Layout</layout>
     </layoutAssignments>

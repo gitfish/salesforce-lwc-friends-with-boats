@@ -1,0 +1,26 @@
+<template>
+    <article class="slds-post">
+        <header class="slds-post__header slds-media">
+            <div class="slds-media__figure">
+            <a href="javascript:void(0);" class="slds-avatar slds-avatar_circle slds-avatar_large">
+                <img alt={review.CreatedBy.Name} src={review.CreatedBy.SmallPhotoUrl} title={review.CreatedBy.Name} />
+            </a>
+            </div>
+            <div class="slds-media__body">
+            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                <p><a href={createdByUrl} data-userid={review.CreatedBy.Id} title={review.CreatedBy.Name} onclick={onUserInfoClick}>{review.CreatedBy.Name}</a> — {review.CreatedBy.CompanyName}</p>
+            </div>
+            <p class="slds-text-body_small">
+                <lightning-formatted-date-time value={review.CreatedDate} year="numeric" day="2-digit" month="short" hour="2-digit" minute="2-digit" second="2-digit"></lightning-formatted-date-time>  
+            </p>
+            </div>
+        </header>
+        <div class="slds-post__content slds-text-longform">
+            <h3 class="slds-text-heading_small">{review.Name}</h3>
+            <p>
+                <lightning-formatted-rich-text value={review.Comment__c}></lightning-formatted-rich-text>
+            </p>
+        </div>
+        <c-fivestarratinglwc value={review.Rating__c} readonly></c-fivestarratinglwc>
+        </article>
+</template>

@@ -12,6 +12,9 @@
             "c/boatdetailslwc": [
                 "boatdetailslwc/boatdetailslwc.js"
             ],
+            "c/boatreviewlwc": [
+                "boatreviewlwc/boatreviewlwc.js"
+            ],
             "c/boatreviewslwc": [
                 "boatreviewslwc/boatreviewslwc.js"
             ],

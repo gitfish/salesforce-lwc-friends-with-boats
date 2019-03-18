@@ -25,7 +25,7 @@ export default class Fivestarratinglwc extends LightningElement {
 
     ratingInstance;
 
-    get currentClass() {
+    get className() {
         return `${this.readonly ? "readonly " : ""}c-rating`;
     }
 

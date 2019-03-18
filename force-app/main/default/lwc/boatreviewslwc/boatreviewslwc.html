@@ -1,6 +1,9 @@
 <template>
     <template if:true={loadState.loading}>
-        <lightning-spinner></lightning-spinner>
+        <div style="padding: 10px;">
+            <lightning-spinner size="small"></lightning-spinner>
+        </div>
+        
     </template>
     <template if:false={loadState.loading}>
         <template if:true={loadState.error}>
@@ -10,14 +13,13 @@
             <div class="slds-align_absolute-center">No reviews available</div>
         </template>
         <template if:false={reviewsEmpty}>
-            <template for:each={reviews} for:item="review">
-                
-            </template>
-        </template>
-    </template>
-    
-    <template if:false={loadState.loading}>
-        <template if:true={}>
+            <div class="sdls-feed">
+                <div class="sdls-feed__list">
+                    <template for:each={reviews} for:item="review">
+                        <c-boatreviewlwc key={review.Id} review={review}></c-boatreviewlwc>
+                    </template>
+                </div>
+            </div>
         </template>
     </template>
 </template>

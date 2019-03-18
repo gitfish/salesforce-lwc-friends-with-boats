@@ -3,8 +3,16 @@ import getAll from "@salesforce/apex/BoatReviews.getAll";
 
 export default class Boatreviewslwc extends LightningElement {
 
+    _boat;
+
     @api
-    boat;
+    get boat() {
+        return this._boat;
+    }
+    set boat(value) {
+        this._boat = value;
+        this.loadReviews();
+    }
 
     @track
     reviews = [];
@@ -17,18 +25,24 @@ export default class Boatreviewslwc extends LightningElement {
     };
 
     get reviewsEmpty() {
-        return this.loadState.loaded && !this.loadState.error && (!this.review || this.reviews.length === 0);
+        return this.loadState.loaded && !this.loadState.error && (!this.reviews || this.reviews.length === 0);
     }
 
-    async connectedCallback() {
+    async loadReviews() {
         this.loadState.loading = true;
         try {
-            const reviews = await getAll(this.boat.Id);
-            this.reviews = reviews || [];
+            this.reviews = await getAll({ boatId: this.boat.Id });
         } catch(error) {
+            console.log("-- Error loading reviews: " + error);
+            console.error(error);
             this.loadState.error = error;
         } finally {
+            this.loadState.loading = false;
             this.loadState.loaded = true;
         }
+    }
+
+    connectedCallback() {
+        this.loadReviews();    
     }
 }
