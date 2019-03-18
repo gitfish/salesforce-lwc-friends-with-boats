@@ -1,0 +1,23 @@
+<template>
+    <template if:true={loadState.loading}>
+        <lightning-spinner></lightning-spinner>
+    </template>
+    <template if:false={loadState.loading}>
+        <template if:true={loadState.error}>
+            <div class="slds-align_absolute-center">Error loading Reviews</div>
+        </template>
+        <template if:true={reviewsEmpty}>
+            <div class="slds-align_absolute-center">No reviews available</div>
+        </template>
+        <template if:false={reviewsEmpty}>
+            <template for:each={reviews} for:item="review">
+                
+            </template>
+        </template>
+    </template>
+    
+    <template if:false={loadState.loading}>
+        <template if:true={}>
+        </template>
+    </template>
+</template>

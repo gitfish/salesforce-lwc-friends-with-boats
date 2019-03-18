@@ -1,4 +1,10 @@
 public class BoatReviews {
+
+    @AuraEnabled
+    public static ID saveReview(BoatReview__c review) {
+        insert review;
+        return review.Id;
+    }
 	
     @AuraEnabled
     public static List<BoatReview__c> getAll(ID boatId) {

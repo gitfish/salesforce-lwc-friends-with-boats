@@ -43,6 +43,10 @@ export default class Boatdetailslwc extends LightningElement {
         
     }
 
+    onBoatReviewAdded(event) {
+        console.log(`-- Boat Review Added: ${JSON.stringify(event.detail)}`);
+    }
+
     connectedCallback() {
         console.log("-- Registering Boat Selected Listener");
         registerListener("friendswithboats__boatselected", this.onBoatSelected, this);
