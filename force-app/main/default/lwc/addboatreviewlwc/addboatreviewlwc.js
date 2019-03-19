@@ -38,7 +38,6 @@ export default class Addboatreviewlwc extends LightningElement {
     }
 
     clear() {
-        console.log("-- Clear Review");
         this.review.Name = "";
         this.review.Comment__c = "<p></p>";
         this.review.Rating__c = 0;
@@ -46,7 +45,6 @@ export default class Addboatreviewlwc extends LightningElement {
 
     async saveReview() {
         const reviewForSave = { ...this.review, Boat__c: this.boat.Id };
-        console.log(`-- On Save: ${JSON.stringify(reviewForSave)}`);
         this.saving = true;
         try {
             const reviewId = await saveReview({ review: reviewForSave });
@@ -59,8 +57,6 @@ export default class Addboatreviewlwc extends LightningElement {
                 }
             }));
         } catch(error) {
-            console.log("-- Error Saving Review");
-            console.error(error);
             this.saveError = error;
             const evt = new ShowToastEvent({
                 title: "Error Saving Review",
