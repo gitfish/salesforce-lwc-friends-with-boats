@@ -19,6 +19,7 @@ export default class Boatreviewslwc extends LightningElement {
 
     @track
     loadState = {
+        boatId: undefined,
         loaded: false,
         loading: false,
         error: undefined
@@ -28,17 +29,29 @@ export default class Boatreviewslwc extends LightningElement {
         return this.loadState.loaded && !this.loadState.error && (!this.reviews || this.reviews.length === 0);
     }
 
+    @api
     async loadReviews() {
-        this.loadState.loading = true;
-        try {
-            this.reviews = await getAll({ boatId: this.boat.Id });
-        } catch(error) {
-            console.log("-- Error loading reviews: " + error);
-            console.error(error);
-            this.loadState.error = error;
-        } finally {
-            this.loadState.loading = false;
-            this.loadState.loaded = true;
+        const boatId = this.boat.Id;
+        if(!this.loadState.loading || boatId !== this.loadState.boatId) {
+            this.loadState.boatId = boatId;
+            this.loadState.loading = true;
+            try {
+                const reviews = await getAll({ boatId: boatId });
+                if(boatId === this.loadState.boatId) {
+                    this.reviews = reviews;
+                }
+            } catch(error) {
+                if(boatId === this.loadState.boatId) {
+                    console.log("-- Error loading reviews: " + error);
+                    console.error(error);
+                    this.loadState.error = error;
+                }
+            } finally {
+                if(boatId === this.loadState.boatId) {
+                    this.loadState.loading = false;
+                    this.loadState.loaded = true;
+                }
+            }
         }
     }
 

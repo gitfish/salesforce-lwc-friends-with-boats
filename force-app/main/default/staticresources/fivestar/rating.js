@@ -144,6 +144,17 @@
       if (callback && doCallback) { callback(getRating()); }
     }
 
+    function setRatingDirect(value) {
+      var rating = value || 0;
+      iterate(stars, function(star, index) {
+        if (index < rating) {
+          star.classList.add('is-active');
+        } else {
+          star.classList.remove('is-active');
+        }
+      });
+    }
+
     /**
      * getRating
      *
@@ -158,6 +169,7 @@
      * Returns the setRating and getRating methods
      */
     return {
+      setRatingDirect: setRatingDirect,
       setRating: setRating,
       getRating: getRating
     };

@@ -12,6 +12,10 @@ export default class Boatdetaillwc extends LightningElement {
         return `${this.boat.Contact__r.Name}'s Boat`;
     }
 
+    get imageStyle() {
+        return `background-image: url('${this.boat.Picture__c}');`;
+    }
+
     onFullDetails() {
         
     }

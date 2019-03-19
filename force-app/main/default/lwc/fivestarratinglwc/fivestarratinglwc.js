@@ -5,7 +5,9 @@ import { loadScript, loadStyle } from "lightning/platformResourceLoader";
 
 export default class Fivestarratinglwc extends LightningElement {
 
-    _value = 0;
+    ratingInit = false;
+
+    ratingInstance;
 
     @api
     readonly = false;
@@ -16,45 +18,41 @@ export default class Fivestarratinglwc extends LightningElement {
     }
     set value(value) {
         if(value !== this._value) {
-            this._value = value;
+            this._value = value || 0;
             if(this.ratingInstance) {
-                this.ratingInstance.setRating(this._value, false);
+                this.ratingInstance.setRatingDirect(this._value);
             }
         }
     }
-
-    ratingInstance;
 
     get className() {
         return `${this.readonly ? "readonly " : ""}c-rating`;
     }
 
     renderedCallback() {
-        Promise.all([
-            loadScript(this, `${fivestar}/rating.js`),
-            loadStyle(this, `${fivestar}/rating.css`)
-        ]).then(() => {
-            console.log("-- Script and Styles loaded");
-            const el = this.template.querySelector("ul");
-            const callback = (rating) => {
-                this.dispatchEvent(new CustomEvent("valuechange", {
-                    detail: {
-                        rating: rating
-                    }
+        if(!this.ratingInit) {
+            this.ratingInit = true;
+            Promise.all([
+                loadScript(this, `${fivestar}/rating.js`),
+                loadStyle(this, `${fivestar}/rating.css`)
+            ]).then(() => {
+                const el = this.template.querySelector("ul");
+                const callback = (rating) => {
+                    this.dispatchEvent(new CustomEvent("valuechange", {
+                        detail: {
+                            rating: rating
+                        }
+                    }))
+                };
+                // eslint-disable-next-line no-undef
+                this.ratingInstance = rating(el,this.value,5,callback,this.readonly);
+            }).catch(error => {
+                this.dispatchEvent(new ShowToastEvent({
+                    title: "Error loading Five Star",
+                    message: error.body.message,
+                    variant: "error"
                 }))
-            };
-            // eslint-disable-next-line no-undef
-            this.ratingInstance = rating(el,this.value,5,callback,this.readonly);
-        }).catch(error => {
-            console.log("-- Error loading five star resources");
-            console.error(error);
-            this.dispatchEvent(new ShowToastEvent({
-                title: "Error loading Five Star",
-                message: error.body.message,
-                variant: "error"
-            }))
-        });
+            });
+        }
     }
-
-
 }

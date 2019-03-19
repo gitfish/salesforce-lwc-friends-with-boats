@@ -1,0 +1,13 @@
+.label {
+    font-weight: bold;
+    display: block;
+}
+.boatproperty {
+    margin-bottom: 3px;
+}
+.imageview {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    margin: 2px;
+}

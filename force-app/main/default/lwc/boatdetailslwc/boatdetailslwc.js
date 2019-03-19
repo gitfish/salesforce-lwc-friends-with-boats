@@ -24,12 +24,10 @@ export default class Boatdetailslwc extends LightningElement {
     }
 
     async loadBoat(boatId) {
-        console.log(`-- Load Boat: ${boatId}`);
         this.boatId = boatId;
         this.boatLoading = true;
         try {
             this.boat = await getBoatById({ boatId: boatId });
-            console.log(`-- Boat Loaded: ${JSON.stringify(this.boat)}`);
         } catch(error) {
             this.boatLoadError = error;
         } finally {
@@ -38,17 +36,19 @@ export default class Boatdetailslwc extends LightningElement {
     }
 
     onBoatSelected(payload) {
-        console.log(`-- App Event: Boat Selected: ${JSON.stringify(payload)}`);
         this.loadBoat(payload.boatId);
         
     }
 
-    onBoatReviewAdded(event) {
-        console.log(`-- Boat Review Added: ${JSON.stringify(event.detail)}`);
+    onBoatReviewAdded() {
+        this.selectedTabId = "reviews";
+        const reviews = this.template.querySelector("c-boatreviewslwc");
+        if(reviews) {
+            reviews.loadReviews();
+        }
     }
 
     connectedCallback() {
-        console.log("-- Registering Boat Selected Listener");
         registerListener("friendswithboats__boatselected", this.onBoatSelected, this);
     }
 

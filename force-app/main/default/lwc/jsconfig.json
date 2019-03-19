@@ -38,6 +38,9 @@
             ],
             "c/leaflet": [
                 "../staticresources/leaflet/leaflet.js"
+            ],
+            "c/util": [
+                "util/util.js"
             ]
         }
     },

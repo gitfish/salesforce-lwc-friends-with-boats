@@ -1,13 +1,13 @@
 <template>
     <tempate if:true={boatSpecified}>
-        <lightning-tabset selected-tab-id={selectedTabId}>
-            <lightning-tab label="DETAILS">
+        <lightning-tabset active-tab-value={selectedTabId}>
+            <lightning-tab label="DETAILS" value="details">
                 <c-boatdetaillwc boat={boat}></c-boatdetaillwc>
             </lightning-tab>
-            <lightning-tab label="REVIEWS">
+            <lightning-tab label="REVIEWS" value="reviews">
                 <c-boatreviewslwc boat={boat}></c-boatreviewslwc>
             </lightning-tab>
-            <lightning-tab label="ADD REVIEW">
+            <lightning-tab label="ADD REVIEW" value="addreview">
                 <c-addboatreviewlwc boat={boat} onboatreviewadded={onBoatReviewAdded}></c-addboatreviewlwc>
             </lightning-tab>
         </lightning-tabset>
