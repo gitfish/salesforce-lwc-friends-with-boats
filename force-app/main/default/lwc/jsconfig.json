@@ -36,11 +36,11 @@
             "c/pubsub": [
                 "pubsub/pubsub.js"
             ],
-            "c/leaflet": [
-                "../staticresources/leaflet/leaflet.js"
-            ],
             "c/util": [
                 "util/util.js"
+            ],
+            "c/leaflet": [
+                "../staticresources/leaflet/leaflet.js"
             ]
         }
     },

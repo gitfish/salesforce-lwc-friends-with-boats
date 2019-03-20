@@ -26,15 +26,31 @@ export default class Addboatreviewlwc extends LightningElement {
     saveError;
 
     onTitleChange(event) {
+        console.log("-- Title Change");
         this.review.Name = event.target.value;
+        this.dispatchEvent(new CustomEvent("reviewchange", {
+            detail: {
+                review: { ...this.review }
+            }
+        }));
     }
 
     onCommentChange(event) {
         this.review.Comment__c = event.detail.value;
+        this.dispatchEvent(new CustomEvent("reviewchange", {
+            detail: {
+                review: { ...this.review }
+            }
+        }));
     }
 
     onRatingChange(event) {
         this.review.Rating__c = event.detail.rating;
+        this.dispatchEvent(new CustomEvent("reviewchange", {
+            detail: {
+                review: { ...this.review }
+            }
+        }));
     }
 
     clear() {

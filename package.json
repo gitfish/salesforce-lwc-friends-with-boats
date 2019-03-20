@@ -1,0 +1,23 @@
+{
+  "name": "salesforce-lwc-friends-with-boats",
+  "version": "1.0.0",
+  "description": "Friends with Boats LWC",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@salesforce/lwc-jest": "^0.4.12"
+  },
+  "scripts": {
+    "test": "lwc-jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitfish/salesforce-lwc-friends-with-boats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitfish/salesforce-lwc-friends-with-boats/issues"
+  },
+  "homepage": "https://github.com/gitfish/salesforce-lwc-friends-with-boats#readme"
+}
