@@ -20,6 +20,12 @@ steps:
     sudo npm install --global sfdx-cli
   displayName: "Install Salesforce CLI"
 - script:
+    sudo npm install
+  displayName: "Install Project dependencies"
+- script:
+    sudo npm run test
+  displayName: "Run local tests"
+- script:
     sudo sfdx force:auth:jwt:grant --clientid $CONSUMER_KEY --username $USERNAME --setdefaultdevhubusername --setalias DevHub --jwtkeyfile $DOWNLOADSECUREFILE_SECUREFILEPATH
   displayName: "Authorise Salesforce DevHub"
 - script:
@@ -30,7 +36,7 @@ steps:
   displayName: "Push Source to Scratch Org"
 - script:
     sudo sfdx force:apex:test:run -l RunLocalTests
-  displayName: "Run Tests"
+  displayName: "Run Apex Tests"
 - script:
     sudo sfdx force:org:delete -u CI -p
   displayName: "Delete Scratch Org"
