@@ -8,6 +8,7 @@
     "@salesforce/lwc-jest": "^0.4.12"
   },
   "scripts": {
+    "wherewestand": "node ./wherewestand.js",
     "test": "lwc-jest"
   },
   "repository": {

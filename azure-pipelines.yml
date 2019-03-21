@@ -14,6 +14,9 @@ steps:
   inputs:
     versionSpec: '10.15.3' # replace this value with the version that you need for your project
 - script:
+    sudo npm run wherewestand
+  displayName: "Find out what might be going wrong"
+- script:
     sudo npm install
   displayName: "Install Project dependencies"
 - script:
