@@ -1,0 +1,37 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+- task: NodeTool@0 
+  inputs:
+    versionSpec: '8.x' # replace this value with the version that you need for your project
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: "jwt.key"
+- script:
+    sudo npm install --global sfdx-cli
+  displayName: "Install Salesforce CLI"
+- script:
+    sudo sfdx force:auth:jwt:grant --clientid $CONSUMER_KEY --username $USERNAME --setdefaultdevhubusername --setalias DevHub --jwtkeyfile $DOWNLOADSECUREFILE_SECUREFILEPATH
+  displayName: "Authorise Salesforce DevHub"
+- script:
+    sudo sfdx force:org:create -s -f config/project-scratch-def.json -a CI
+  displayName: "Create Scratch Org"
+- script:
+    sudo sfdx force:source:push
+  displayName: "Push Source to Scratch Org"
+- script:
+    sudo sfdx force:apex:test:run -l RunLocalTests
+  displayName: "Run Tests"
+- script:
+    sudo sfdx force:org:delete -u CI -p
+  displayName: "Delete Scratch Org"
+  
