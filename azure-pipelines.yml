@@ -7,24 +7,24 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'Ubuntu-18.04'
 
 steps:
 - task: NodeTool@0 
   inputs:
-    versionSpec: '8.12.0' # replace this value with the version that you need for your project
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: "jwt.key"
-- script:
-    sudo npm install --global sfdx-cli
-  displayName: "Install Salesforce CLI"
+    versionSpec: '10.15.3' # replace this value with the version that you need for your project
 - script:
     sudo npm install
   displayName: "Install Project dependencies"
 - script:
     sudo npm run test
   displayName: "Run local tests"
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: "jwt.key"
+- script:
+    sudo npm install --global sfdx-cli
+  displayName: "Install Salesforce CLI"
 - script:
     sudo sfdx force:auth:jwt:grant --clientid $CONSUMER_KEY --username $USERNAME --setdefaultdevhubusername --setalias DevHub --jwtkeyfile $DOWNLOADSECUREFILE_SECUREFILEPATH
   displayName: "Authorise Salesforce DevHub"
