@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "BoatType__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "BoatType__cs.json"
+        ]
+    }
+]

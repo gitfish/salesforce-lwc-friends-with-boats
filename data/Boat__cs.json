@@ -1,0 +1,166 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef1"
+            },
+            "Name": "Dipsy Doodle",
+            "Description__c": "Boo",
+            "Length__c": 20,
+            "Picture__c": "/resource/Sailboats/sailboat1.png",
+            "Price__c": 100000,
+            "Year_Built__c": 2015,
+            "Geolocation__c": {
+                "latitude": 38.875052,
+                "longitude": -77.049531
+            },
+            "Contact__c": "@ContactRef1"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef2"
+            },
+            "Name": "Gallifrey Falls",
+            "Length__c": 30,
+            "Picture__c": "/resource/Sailboats/sailboat2.png",
+            "Price__c": 500000,
+            "Year_Built__c": 2013,
+            "Geolocation__c": {
+                "latitude": 39.282735,
+                "longitude": -76.6170849
+            },
+            "Contact__c": "@ContactRef2"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef3"
+            },
+            "Name": "Geronimo",
+            "Description__c": "Is this <b>some rich text</b>",
+            "Length__c": 15,
+            "Picture__c": "/resource/Sailboats/skiboat1.png",
+            "Price__c": 30000,
+            "Year_Built__c": 2008,
+            "Geolocation__c": {
+                "latitude": 42.3565323,
+                "longitude": -71.0524035
+            },
+            "Contact__c": "@ContactRef3"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef4"
+            },
+            "Name": "All In The Family",
+            "Length__c": 15,
+            "Picture__c": "/resource/Sailboats/sportboat1.png",
+            "Price__c": 99000,
+            "Year_Built__c": 2005,
+            "Geolocation__c": {
+                "latitude": 25.0831569,
+                "longitude": -77.3248236
+            },
+            "Contact__c": "@ContactRef4"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef5"
+            },
+            "Name": "The Old Man and the Sea",
+            "Length__c": 15,
+            "Picture__c": "/resource/Sailboats/skiboat2.png",
+            "Price__c": 55000,
+            "Year_Built__c": 2009,
+            "Geolocation__c": {
+                "latitude": 41.0671996,
+                "longitude": -71.9345349
+            },
+            "Contact__c": "@ContactRef5"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef6"
+            },
+            "Name": "The Enterprise",
+            "Length__c": 42,
+            "Picture__c": "/resource/Sailboats/yacht1.png",
+            "Price__c": 555000,
+            "Year_Built__c": 2009,
+            "Geolocation__c": {
+                "latitude": 29.229702,
+                "longitude": -81.0111687
+            },
+            "Contact__c": "@ContactRef6"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef7"
+            },
+            "Name": "Excelsior",
+            "Length__c": 40,
+            "Picture__c": "/resource/Sailboats/yacht2.png",
+            "Price__c": 655000,
+            "Year_Built__c": 2012,
+            "Geolocation__c": {
+                "latitude": 35.8937555,
+                "longitude": -75.6461981
+            },
+            "Contact__c": "@ContactRef7"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef8"
+            },
+            "Name": "Big Billy Bass",
+            "Length__c": 15,
+            "Picture__c": "/resource/Houseboats/fishingboat1.png",
+            "Price__c": 30000,
+            "Year_Built__c": 2002,
+            "Geolocation__c": {
+                "latitude": 36.8315019,
+                "longitude": -75.9792301
+            },
+            "Contact__c": "@ContactRef8"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef9"
+            },
+            "Name": "Home Suite Home",
+            "Length__c": 25,
+            "Picture__c": "/resource/Houseboats/houseboat1.png",
+            "Price__c": 120500,
+            "Year_Built__c": 2006,
+            "Geolocation__c": {
+                "latitude": 21.1412251,
+                "longitude": -86.7767266
+            },
+            "Contact__c": "@ContactRef9"
+        },
+        {
+            "attributes": {
+                "type": "Boat__c",
+                "referenceId": "Boat__cRef10"
+            },
+            "Name": "Man Cave",
+            "Length__c": 27,
+            "Picture__c": "/resource/Houseboats/houseboat2.png",
+            "Price__c": 140500,
+            "Year_Built__c": 1999,
+            "Geolocation__c": {
+                "latitude": 38.689841,
+                "longitude": -75.0781053
+            },
+            "Contact__c": "@ContactRef10"
+        }
+    ]
+}
