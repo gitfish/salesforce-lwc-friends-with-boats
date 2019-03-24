@@ -11,11 +11,10 @@
             "Picture__c": "/resource/Sailboats/sailboat1.png",
             "Price__c": 100000,
             "Year_Built__c": 2015,
-            "Geolocation__c": {
-                "latitude": 38.875052,
-                "longitude": -77.049531
-            },
-            "Contact__c": "@ContactRef1"
+            "Geolocation__Latitude__s": 38.875052,
+            "Geolocation__Longitude__s": -77.049531,
+            "Contact__c": "@ContactRef1",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -27,11 +26,10 @@
             "Picture__c": "/resource/Sailboats/sailboat2.png",
             "Price__c": 500000,
             "Year_Built__c": 2013,
-            "Geolocation__c": {
-                "latitude": 39.282735,
-                "longitude": -76.6170849
-            },
-            "Contact__c": "@ContactRef2"
+            "Geolocation__Latitude__s": 39.282735,
+            "Geolocation__Longitude__s": -76.6170849,
+            "Contact__c": "@ContactRef2",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -44,11 +42,10 @@
             "Picture__c": "/resource/Sailboats/skiboat1.png",
             "Price__c": 30000,
             "Year_Built__c": 2008,
-            "Geolocation__c": {
-                "latitude": 42.3565323,
-                "longitude": -71.0524035
-            },
-            "Contact__c": "@ContactRef3"
+            "Geolocation__Latitude__s": 42.3565323,
+            "Geolocation__Longitude__s": -71.0524035,
+            "Contact__c": "@ContactRef3",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -60,11 +57,10 @@
             "Picture__c": "/resource/Sailboats/sportboat1.png",
             "Price__c": 99000,
             "Year_Built__c": 2005,
-            "Geolocation__c": {
-                "latitude": 25.0831569,
-                "longitude": -77.3248236
-            },
-            "Contact__c": "@ContactRef4"
+            "Geolocation__Latitude__s": 25.0831569,
+            "Geolocation__Longitude__s": -77.3248236,
+            "Contact__c": "@ContactRef4",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -76,11 +72,10 @@
             "Picture__c": "/resource/Sailboats/skiboat2.png",
             "Price__c": 55000,
             "Year_Built__c": 2009,
-            "Geolocation__c": {
-                "latitude": 41.0671996,
-                "longitude": -71.9345349
-            },
-            "Contact__c": "@ContactRef5"
+            "Geolocation__Latitude__s": 41.0671996,
+            "Geolocation__Longitude__s": -71.9345349,
+            "Contact__c": "@ContactRef5",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -92,11 +87,10 @@
             "Picture__c": "/resource/Sailboats/yacht1.png",
             "Price__c": 555000,
             "Year_Built__c": 2009,
-            "Geolocation__c": {
-                "latitude": 29.229702,
-                "longitude": -81.0111687
-            },
-            "Contact__c": "@ContactRef6"
+            "Geolocation__Latitude__s": 29.229702,
+            "Geolocation__Longitude__s": -81.0111687,
+            "Contact__c": "@ContactRef6",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -108,11 +102,10 @@
             "Picture__c": "/resource/Sailboats/yacht2.png",
             "Price__c": 655000,
             "Year_Built__c": 2012,
-            "Geolocation__c": {
-                "latitude": 35.8937555,
-                "longitude": -75.6461981
-            },
-            "Contact__c": "@ContactRef7"
+            "Geolocation__Latitude__s": 35.8937555,
+            "Geolocation__Longitude__s": -75.6461981,
+            "Contact__c": "@ContactRef7",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -124,11 +117,10 @@
             "Picture__c": "/resource/Houseboats/fishingboat1.png",
             "Price__c": 30000,
             "Year_Built__c": 2002,
-            "Geolocation__c": {
-                "latitude": 36.8315019,
-                "longitude": -75.9792301
-            },
-            "Contact__c": "@ContactRef8"
+            "Geolocation__Latitude__s": 36.8315019,
+            "Geolocation__Longitude__s": -75.9792301,
+            "Contact__c": "@ContactRef8",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -140,11 +132,10 @@
             "Picture__c": "/resource/Houseboats/houseboat1.png",
             "Price__c": 120500,
             "Year_Built__c": 2006,
-            "Geolocation__c": {
-                "latitude": 21.1412251,
-                "longitude": -86.7767266
-            },
-            "Contact__c": "@ContactRef9"
+            "Geolocation__Latitude__s": 21.1412251,
+            "Geolocation__Longitude__s": -86.7767266,
+            "Contact__c": "@ContactRef9",
+            "BoatType__c": "@BoatType__cRef1"
         },
         {
             "attributes": {
@@ -156,11 +147,10 @@
             "Picture__c": "/resource/Houseboats/houseboat2.png",
             "Price__c": 140500,
             "Year_Built__c": 1999,
-            "Geolocation__c": {
-                "latitude": 38.689841,
-                "longitude": -75.0781053
-            },
-            "Contact__c": "@ContactRef10"
+            "Geolocation__Latitude__s": 38.689841,
+            "Geolocation__Longitude__s": -75.0781053,
+            "Contact__c": "@ContactRef10",
+            "BoatType__c": "@BoatType__cRef1"
         }
     ]
 }

@@ -8,6 +8,14 @@
         ]
     },
     {
+        "sobject": "BoatType__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "BoatType__cs.json"
+        ]
+    },
+    {
         "sobject": "Boat__c",
         "saveRefs": false,
         "resolveRefs": true,
