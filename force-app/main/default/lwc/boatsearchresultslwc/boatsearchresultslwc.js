@@ -31,7 +31,7 @@ export default class Boatsearchresultslwc extends LightningElement {
         try {
             this.boats = await getBoats({ boatTypeId: boatTypeId });
         } catch(error) {
-            this.boatsError = error;
+            this.searchState.error = error;
         } finally {
             this.searchState.searching = false;
         }
