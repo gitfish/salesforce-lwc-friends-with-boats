@@ -8,7 +8,11 @@ export default class Boatsearchresultslwc extends LightningElement {
     boats = [];
 
     @track
-    boatsError;
+    searchState = {
+        searched: false,
+        searching: false,
+        error: false
+    };
 
     @track
     selectedBoatId;
@@ -22,10 +26,14 @@ export default class Boatsearchresultslwc extends LightningElement {
 
     @api
     async search(boatTypeId) {
+        this.searchState.searched = true;
+        this.searchState.searching = true;
         try {
             this.boats = await getBoats({ boatTypeId: boatTypeId });
         } catch(error) {
             this.boatsError = error;
+        } finally {
+            this.searchState.searching = false;
         }
     }
 
