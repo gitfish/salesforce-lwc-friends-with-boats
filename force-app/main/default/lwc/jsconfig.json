@@ -33,6 +33,12 @@
             "c/fivestarratinglwc": [
                 "fivestarratinglwc/fivestarratinglwc.js"
             ],
+            "c/mapcontainerlwc": [
+                "mapcontainerlwc/mapcontainerlwc.js"
+            ],
+            "c/maplwc": [
+                "maplwc/maplwc.js"
+            ],
             "c/pubsub": [
                 "pubsub/pubsub.js"
             ],

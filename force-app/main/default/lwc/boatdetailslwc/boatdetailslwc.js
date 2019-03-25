@@ -36,8 +36,7 @@ export default class Boatdetailslwc extends LightningElement {
     }
 
     onBoatSelected(payload) {
-        this.loadBoat(payload.boatId);
-        
+        this.loadBoat(payload.boat.Id);
     }
 
     onBoatReviewAdded() {

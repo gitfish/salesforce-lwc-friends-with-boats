@@ -5,7 +5,7 @@
         </lightning:layoutitem>
         <lightning:layoutitem size="4" padding="around-small">
             <c:boatdetailslwc></c:boatdetailslwc>
-            <c:Map />
+            <c:mapcontainerlwc></c:mapcontainerlwc>
         </lightning:layoutitem>
     </lightning:layout>
     

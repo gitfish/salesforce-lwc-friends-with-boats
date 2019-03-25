@@ -38,7 +38,17 @@ export default class Boatsearchresultslwc extends LightningElement {
     }
 
     onBoatSelect(event) {
-        this.selectedBoatId = event.detail.boatId;
-        fireEvent("friendswithboats__boatselected", { ...event.detail });
+        // boat selected
+        const boat = event.detail.boat;
+        if(boat) {
+            this.selectedBoatId = boat.Id;
+            fireEvent("friendswithboats__boatselected", { boat: boat });
+            fireEvent("friendswithboats__plotmapmarker", {
+                sObjectId: boat.Id,
+                lat: boat.Geolocation__Latitude__s,
+                long: boat.Geolocation__Longitude__s,
+                label: boat.Name
+            });
+        }
     }
 }

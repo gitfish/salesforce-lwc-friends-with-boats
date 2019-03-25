@@ -20,7 +20,7 @@ export default class Boattilelwc extends LightningElement {
         // component event
         this.dispatchEvent(new CustomEvent("select", {
             detail: {
-                boatId: this.boat.Id
+                boat: { ...this.boat }
             }
         }));
     }
